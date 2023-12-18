@@ -21,11 +21,48 @@
             color: aliceblue;
             text-align: center;
         }
+        .nao {
+            position: absolute;
+            cursor: pointer;
+            background-color: red; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .sim {
+            background-color: yellowgreen; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
     <h1>Professor</h1>
     <iframe src="https://giphy.com/embed/X6hiFJjvTDAAw" width="430" height="410" frameBorder="0"></iframe>
     <h1>Você aceita ser nosso Patrono?</h1>
+    <button class="sim"><a href="sim.html">SIM</a></button>
+    <div><button class="nao">NÂO</button></div>
+    <script>
+        nao = document.querySelector('.nao')
+        nao.addEventListener('click', () => {
+            var larguraTela = window.innerWidth - nao.offsetWidth;
+            var alturaTela = window.innerHeight - nao.offsetHeight;
+
+            var novaPosicaoX = Math.floor(Math.random() * larguraTela);
+            var novaPosicaoY = Math.floor(Math.random() * alturaTela);
+
+            nao.style.left = novaPosicaoX + 'px';
+            nao.style.top = novaPosicaoY + 'px';
+        })
+    </script>
 </body>
 </html>

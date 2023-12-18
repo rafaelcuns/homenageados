@@ -21,11 +21,48 @@
             text-align: center;
             text-shadow: 0 0 20px black;
         }
+        .nao {
+            position: absolute;
+            cursor: pointer;
+            background-color: red; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .sim {
+            background-color: yellowgreen; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
     <h1>Samuel</h1>
         <img src="samuel.jpg" alt="">
     <h1>Você aceita ser nosso homenageado?</h1>
+    <button class="sim"><a href="sim.html">SIM</a></button>
+    <div><button class="nao">NÂO</button></div>
+    <script>
+        nao = document.querySelector('.nao')
+        nao.addEventListener('click', () => {
+            var larguraTela = window.innerWidth - nao.offsetWidth;
+            var alturaTela = window.innerHeight - nao.offsetHeight;
+
+            var novaPosicaoX = Math.floor(Math.random() * larguraTela);
+            var novaPosicaoY = Math.floor(Math.random() * alturaTela);
+
+            nao.style.left = novaPosicaoX + 'px';
+            nao.style.top = novaPosicaoY + 'px';
+        })
+    </script>
 </body>
 </html>
