@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        div {
+            width: 100%;
+            background-color: green;
+        }
+        div > h1 {
+            margin: 0;
+            color: aliceblue;
+            padding: 10px;
+        }
+        h1 {
+            font-family: sans-serif;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .nao {
+            position: absolute;
+            cursor: pointer;
+            background-color: red; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .sim {
+            background-color: yellowgreen; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div><h1>INFO 161</h1></div>
+    <img src="" alt="">
+    <h1>Tauan, você aceita ser nosso homenageado?</h1>
+    <button class="sim"><a href="sim.html">SIM</a></button>
+    <button class="nao">NÂO</button>
+    <script>
+        nao = document.querySelector('.nao')
+        nao.addEventListener('click', () => {
+            var larguraTela = window.innerWidth - nao.offsetWidth;
+            var alturaTela = window.innerHeight - nao.offsetHeight;
+
+            var novaPosicaoX = Math.floor(Math.random() * larguraTela);
+            var novaPosicaoY = Math.floor(Math.random() * alturaTela);
+
+            nao.style.left = novaPosicaoX + 'px';
+            nao.style.top = novaPosicaoY + 'px';
+        })
+    </script>
+</body>
+</html>
